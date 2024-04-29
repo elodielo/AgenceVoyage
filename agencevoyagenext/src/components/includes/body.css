@@ -1,0 +1,7 @@
+:root{
+    --fondBody : rgba(236, 229, 224, 1)
+}
+
+.body{
+    background-color: var(--fondBody);
+}
