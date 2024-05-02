@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ModaliteTransport{% endblock %}
+
+{% block body %}
+    <h1>Edit ModaliteTransport</h1>
+
+    {{ include('modalite_transport/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_modalite_transport_index') }}">back to list</a>
+
+    {{ include('modalite_transport/_delete_form.html.twig') }}
+{% endblock %}

@@ -6,6 +6,7 @@ use App\Repository\ModaliteTransportRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: ModaliteTransportRepository::class)]
 class ModaliteTransport
@@ -16,6 +17,7 @@ class ModaliteTransport
     private ?int $id = null;
 
     #[ORM\Column(length: 70)]
+    #[Groups('api_voyage_index')]
     private ?string $nom = null;
 
     /**

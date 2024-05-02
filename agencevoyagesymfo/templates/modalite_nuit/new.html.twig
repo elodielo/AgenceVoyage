@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ModaliteNuit{% endblock %}
+
+{% block body %}
+    <h1>Create new ModaliteNuit</h1>
+
+    {{ include('modalite_nuit/_form.html.twig') }}
+
+    <a href="{{ path('app_modalite_nuit_index') }}">back to list</a>
+{% endblock %}

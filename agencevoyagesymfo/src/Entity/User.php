@@ -3,14 +3,14 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -33,16 +33,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
-    /**
-     * @var Collection<int, Voyage>
-     */
-    #[ORM\OneToMany(targetEntity: Voyage::class, mappedBy: 'user')]
-    private Collection $voyages;
-
-    public function __construct()
-    {
-        $this->voyages = new ArrayCollection();
-    }
+    #[ORM\Column(type: 'boolean')]
+    private $isVerified = false;
 
     public function getId(): ?int
     {
@@ -118,32 +110,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    /**
-     * @return Collection<int, Voyage>
-     */
-    public function getVoyages(): Collection
+    public function isVerified(): bool
     {
-        return $this->voyages;
+        return $this->isVerified;
     }
 
-    public function addVoyage(Voyage $voyage): static
+    public function setVerified(bool $isVerified): static
     {
-        if (!$this->voyages->contains($voyage)) {
-            $this->voyages->add($voyage);
-            $voyage->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeVoyage(Voyage $voyage): static
-    {
-        if ($this->voyages->removeElement($voyage)) {
-            // set the owning side to null (unless already changed)
-            if ($voyage->getUser() === $this) {
-                $voyage->setUser(null);
-            }
-        }
+        $this->isVerified = $isVerified;
 
         return $this;
     }

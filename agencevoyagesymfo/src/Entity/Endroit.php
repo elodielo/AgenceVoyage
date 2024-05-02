@@ -6,6 +6,7 @@ use App\Repository\EndroitRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: EndroitRepository::class)]
 class Endroit
@@ -28,6 +29,7 @@ class Endroit
     private Collection $voyages;
 
     #[ORM\Column(length: 255)]
+    #[Groups('api_voyage_index')]
     private ?string $lienImage = null;
 
     public function __construct()

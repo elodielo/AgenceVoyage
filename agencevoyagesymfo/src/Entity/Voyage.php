@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: VoyageRepository::class)]
 class Voyage
@@ -17,6 +18,7 @@ class Voyage
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('api_voyage_index')]
     private ?string $nom = null;
 
     #[ORM\Column(nullable: true)]
@@ -26,6 +28,7 @@ class Voyage
     private ?bool $repasCompris = null;
 
     #[ORM\Column(nullable: true)]
+    #[Groups('api_voyage_index')]
     private ?int $prixTotal = null;
 
     #[ORM\Column(nullable: true)]
@@ -39,9 +42,11 @@ class Voyage
 
 
     #[ORM\ManyToOne(inversedBy: 'voyages')]
+    #[Groups(['api_voyage_index'])]
     private ?Endroit $endroit = null;
 
     #[ORM\ManyToOne(inversedBy: 'voyages')]
+    #[Groups('api_voyage_index')]
     private ?ModaliteTransport $modaliteTransport = null;
 
     #[ORM\ManyToOne(inversedBy: 'voyages')]
