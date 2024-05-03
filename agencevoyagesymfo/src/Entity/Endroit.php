@@ -17,9 +17,11 @@ class Endroit
     private ?int $id = null;
 
     #[ORM\Column(length: 150)]
+    #[Groups('api_voyage_index')]
     private ?string $nom = null;
 
     #[ORM\ManyToOne(inversedBy: 'endroit')]
+    #[Groups(['api_voyage_index','api_voyage_nom'])]
     private ?Pays $pays = null;
 
     /**

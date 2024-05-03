@@ -17,7 +17,7 @@ class ModaliteTransport
     private ?int $id = null;
 
     #[ORM\Column(length: 70)]
-    #[Groups('api_voyage_index')]
+    #[Groups(['api_voyage_nom', 'api_voyage_index' ])]
     private ?string $nom = null;
 
     /**

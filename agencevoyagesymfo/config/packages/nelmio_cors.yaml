@@ -36,4 +36,4 @@ nelmio_cors:
         max_age: 3600
     paths:
         '^/api':
-            allow_origin: ['http://localhost:3001']
+            allow_origin: ['http://localhost:3000']

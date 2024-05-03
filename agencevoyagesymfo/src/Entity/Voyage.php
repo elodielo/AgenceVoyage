@@ -22,9 +22,11 @@ class Voyage
     private ?string $nom = null;
 
     #[ORM\Column(nullable: true)]
+    #[Groups('api_voyage_index')]
     private ?int $nombreNuits = null;
 
     #[ORM\Column(nullable: true)]
+    #[Groups('api_voyage_index')]
     private ?bool $repasCompris = null;
 
     #[ORM\Column(nullable: true)]
@@ -32,12 +34,15 @@ class Voyage
     private ?int $prixTotal = null;
 
     #[ORM\Column(nullable: true)]
+    #[Groups('api_voyage_index')]
     private ?bool $transportADestinationInclus = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    #[Groups('api_voyage_index')]
     private ?\DateTimeInterface $dateDebut = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    #[Groups('api_voyage_index')]
     private ?\DateTimeInterface $dateFin = null;
 
 
@@ -50,6 +55,7 @@ class Voyage
     private ?ModaliteTransport $modaliteTransport = null;
 
     #[ORM\ManyToOne(inversedBy: 'voyages')]
+    #[Groups('api_voyage_nom')]
     private ?ModaliteNuit $modaliteNuit = null;
 
     /**

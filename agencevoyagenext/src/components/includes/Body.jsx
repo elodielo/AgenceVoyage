@@ -2,6 +2,7 @@
 
 import "./body.css";
 import BandeauPhotos from "./BandeauPhotos";
+import BandeauPhotos2 from "./BandeauPhotos2";
 import { useEffect, useState } from "react";
 // import fetch from 'cross-fetch';
 
@@ -16,7 +17,7 @@ export default function Body() {
   useEffect(() => {
     // Déclenchement de la récupération des données de personnages au montage du composant.
     try {
-      fetch("http://127.0.0.1:8000/api/voyage/tous")
+      fetch("http://127.0.0.1:8000/api/voyage/show")
         .then((response) => response.json()) // Transformation de la réponse en JSON.
         .then((data) => {
           setLoading(false); // Arrêt de l'indicateur de chargement après la réception des données.
@@ -28,14 +29,13 @@ export default function Body() {
     }
   }, []); // Le tableau vide indique que cet effet ne s'exécute qu'au montage.
 
+  
   return (
     <>
       {!loading && !error && data && (
         <div className="body">
-          <h2>Destinations à vélo</h2>
           <BandeauPhotos data={data} />
-          <h2> Les destinations locales </h2>
-          {/* <BandeauPhotos2 /> */}
+          <BandeauPhotos2 />
         </div>
       )}
     </>
