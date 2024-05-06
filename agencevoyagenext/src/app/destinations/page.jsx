@@ -13,6 +13,8 @@ export default function Destinations(props)
     const [data, setData] = useState(null); // Stockage des données reçues du fetch.
     const [filteredData, setFilteredData] = useState(null);
     const [filter, setFilter] = useState('');
+    const [filterMoyen, setFilterMoyen] = useState('');
+    const [filterDuree, setFilterDuree] = useState('');
 
     useEffect(() => {
         if (data) {
@@ -21,7 +23,22 @@ export default function Destinations(props)
             setFilteredData(wip);
         }
     }, [filter])
-    
+
+    useEffect(() => {
+      if (data) {
+          console.log(filterMoyen);
+          const wap = data.filter((voyage) => voyage.modaliteTransport.nom === filterMoyen);
+          setFilteredData(wap);
+      }
+  }, [filterMoyen])
+
+  useEffect(() => {
+    if (data) {
+        const wip = data.filter((voyage) => voyage.nombreNuits === filterDuree);
+        setFilteredData(wip);
+    }
+}, [filterDuree])
+  
   
     useEffect(() => {
       // Déclenchement de la récupération des données de personnages au montage du composant.
@@ -44,7 +61,7 @@ export default function Destinations(props)
     <Navbar />
     {!loading && !error && data && (
         <>
-    <Tricase data={data} setFilter={setFilter}/>
+    <Tricase data={data} data2={filteredData} setFilter={setFilter} setFilterMoyen={setFilterMoyen} setFilterDuree={setFilterDuree}/>
     <BandeauPhotos data={filteredData} /> </>)} 
     <Footer />
     </>

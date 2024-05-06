@@ -12,7 +12,7 @@ export default function Tricase(props) {
   return (
     <div>
       <div className="d-flex justify-content-between p-5">
-        <p>{props.data.length} destinations</p>
+        <p>{props.data2.length} destinations</p>
         <div id="casesTri" className="d-flex ">
           <div class="dropdown">
             <a
@@ -51,7 +51,7 @@ export default function Tricase(props) {
             <ul className='dropdown-menu'>
       {props.data.map((voyage) => (
         !transportDejaNotés.includes(voyage.modaliteTransport.nom) &&
-        <li onClick={() => props.setFilter(voyage.modaliteTransport.nom)}>
+        <li onClick={() => props.setFilterMoyen(voyage.modaliteTransport.nom)}>
           <p className="dropdown-item" >
             {voyage.modaliteTransport.nom}
           </p>
@@ -70,10 +70,10 @@ export default function Tricase(props) {
   <ul class="dropdown-menu">
   {props.data.map((voyage) => (
         !DureeDejaNotee.includes(voyage.nombreNuits) &&
-        <li >
-          <a className="dropdown-item" href="#">
+        <li onClick={() => props.setFilterDuree(voyage.nombreNuits)} >
+          <p className="dropdown-item">
             {voyage.nombreNuits} nuits
-          </a>
+          </p>
           {DureeDejaNotee.push(voyage.nombreNuits)}
         </li>
       ))}

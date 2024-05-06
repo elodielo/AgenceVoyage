@@ -1,3 +1,12 @@
+:root{
+    --fondCouleur : rgb(147, 102, 102);
+    --fondBody : rgba(236, 229, 224, 1)
+}
+
 body {
-    background-color: skyblue;
+    background-color: var(--fondBody);
+}
+
+.fond{
+    background-color: var(--fondCouleur);
 }

@@ -8,6 +8,7 @@ use App\Security\EmailVerifier;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mime\Address;
@@ -31,6 +32,7 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
+            if ($form->get('plainPassword')->getData() == $form->get('password2')->getData()) {
             $user->setPassword(
                     $userPasswordHasher->hashPassword(
                     $user,
@@ -49,10 +51,14 @@ class RegistrationController extends AbstractController
                     ->subject('Please Confirm your Email')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );
-
             // do anything else you need here, like send an email
-
+            
             return $this->redirectToRoute('app_pays_index');
+        } else {
+            $form->get('plainPassword')->addError(new FormError("Les mots de passe donnés sont différents."));
+            $form->get('password2')->addError(new FormError(""));
+        }
+
         }
 
         return $this->render('registration/register.html.twig', [

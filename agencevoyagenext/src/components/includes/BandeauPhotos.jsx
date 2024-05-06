@@ -11,7 +11,7 @@ export default function BandeauPhotos(props) {
 
   return(
     <div className='p-2'>
-  <h2>Destinations à vélo</h2>
+  <h2 className='p-3'>Destinations proposées</h2>
   <div  >
   <ul className='d-flex flex-wrap flex-row justify-content-evenly'>
     {props.data.map((voyage, index) => (

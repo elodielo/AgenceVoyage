@@ -3,9 +3,10 @@
 {% block title %}New Voyage{% endblock %}
 
 {% block body %}
-    <h1>Create new Voyage</h1>
-
+    <h1 class="fond p-3">Create new Voyage</h1>
+    <div class="d-flex justify-content-center">
+    <div class=" w-50 p-3 text-bg-light p-3 ">
     {{ include('voyage/_form.html.twig') }}
-
+</div></div>
     <a href="{{ path('app_voyage_index') }}">back to list</a>
 {% endblock %}

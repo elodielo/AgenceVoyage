@@ -3,20 +3,20 @@
 {% block title %}Voyage index{% endblock %}
 
 {% block body %}
-    <h1>Voyage index</h1>
+    <h1 class="fond p-3">Voyage index</h1>
 
     <table class="table">
-        <thead>
+        <thead class="text-center">
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
-                <th>NombreNuits</th>
-                <th>RepasCompris</th>
-                <th>PrixTotal</th>
-                <th>TransportADestinationInclus</th>
-                <th>DateDebut</th>
-                <th>DateFin</th>
-                <th>endroit</th>
+                <th>Nombre de nuits</th>
+                <th>Repas compris</th>
+                <th>Prix total</th>
+                <th>Transport inclus</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+                <th>Localisation</th>
                 <th>Voyage en</th>
                 <th>Lien image</th>
 
@@ -26,7 +26,7 @@
         <tbody>
     
             {% for voyage in voyages %}
-            <tr>
+            <tr class="text-center">
                 <td>{{ voyage.id }}</td>
                 <td>{{ voyage.nom }}</td>
                 <td>{{ voyage.nombreNuits }}</td>
