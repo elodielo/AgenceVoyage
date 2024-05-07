@@ -3,9 +3,12 @@
 {% block title %}New Endroit{% endblock %}
 
 {% block body %}
-    <h1>Create new Endroit</h1>
-
+    <h1 class="fond p-3">Create new Endroit</h1>
+    <div class="d-flex justify-content-center">
+    <div class=" w-50 p-3 text-bg-light p-3 ">
     {{ include('endroit/_form.html.twig') }}
 
     <a href="{{ path('app_endroit_index') }}">back to list</a>
+    </div></div>
 {% endblock %}
+

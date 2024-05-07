@@ -9,6 +9,7 @@ import Plaire from "@/components/includes/Plaire";
 
 
 import './pageVoyage.css'
+import FormulaireContact from "@/components/FormulaireContact";
 
 export default function Voyage(props) {
   const [loading, setLoading] = useState(true); // État de chargement des données.
@@ -62,7 +63,9 @@ export default function Voyage(props) {
             <h5>Prix total</h5>
             <p>{data.prixTotal} euros </p>
           </div>
-          <div>Formulaire</div>
+          <div>
+            <FormulaireContact />
+          </div>
         </div>
       </div>)}
       

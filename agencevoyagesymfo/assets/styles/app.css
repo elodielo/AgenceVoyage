@@ -10,3 +10,8 @@ body {
 .fond{
     background-color: var(--fondCouleur);
 }
+
+.imageLogo{
+    width : 7%;
+    margin: 1%;
+}
