@@ -3,11 +3,11 @@
 {% block title %}New Pays{% endblock %}
 
 {% block body %}
-    <h1 class="fond p-3">Create new Pays</h1>
+    <h1 class=" p-3">Enregistrer un nouveau pays</h1>
     <div class="d-flex justify-content-center">
     <div class=" w-50 p-3 text-bg-light p-3 ">
     {{ include('pays/_form.html.twig') }}
 
-    <a href="{{ path('app_pays_index') }}">back to list</a>
+    <a class="btn btn-outline-primary" href="{{ path('app_pays_index') }}">Revenir à la liste des pays</a>
     </div></div>
 {% endblock %}

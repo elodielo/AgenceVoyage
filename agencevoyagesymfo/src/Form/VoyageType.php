@@ -9,6 +9,11 @@ use App\Entity\User;
 use App\Entity\Voyage;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -18,15 +23,15 @@ class VoyageType extends AbstractType
     {
         
         $builder
-        ->add('nom')
-        ->add('nombreNuits')
-        ->add('repasCompris')
-        ->add('prixTotal')
-        ->add('transportADestinationInclus')
-        ->add('dateDebut', null, [
+        ->add('nom', TextType::class)
+        ->add('nombreNuits', IntegerType::class)
+        ->add('repasCompris', CheckboxType::class)
+        ->add('prixTotal', IntegerType::class)
+        ->add('transportADestinationInclus', CheckboxType::class)
+        ->add('dateDebut',  dateType::class, [
                 'widget' => 'single_text'
             ])
-            ->add('dateFin', null, [
+            ->add('dateFin', dateType::class, [
                 'widget' => 'single_text'
                 ])
             ->add('endroit', EntityType::class, [

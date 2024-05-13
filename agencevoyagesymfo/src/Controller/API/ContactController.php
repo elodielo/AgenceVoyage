@@ -50,4 +50,33 @@ class ContactController extends AbstractController
             return $this->json(null, Response::HTTP_CREATED);
         }
     }
+
+    // #[Route('/new/{id}', name: 'new', methods: ['POST'])]
+    // public function newResa(
+    //     Request $request,
+    //     EntityManagerInterface $em,
+    //     SerializerInterface $serializer,
+    //     ValidatorInterface $validator
+    // ) {
+    //     $contact = $serializer->deserialize(
+    //         $request->getContent(),
+    //         Contact::class,
+    //         'json',
+    //         context: ['groups' => 'api_contact_new']
+    //     );
+
+    //     $errors = $validator->validate($contact);
+    //     if ($errors->count()) {
+    //         $messages = [];
+    //         foreach ($errors as $error) {
+    //             $message[] = $error->getMessage();
+    //         }
+    //         return $this->json($messages, Response::HTTP_UNPROCESSABLE_ENTITY);
+    //     }  else {
+    //         $em->persist($contact);
+    //         $em->flush();
+    //         $this->addFlash('sucess', 'categorie ajoutée');
+    //         return $this->json(null, Response::HTTP_CREATED);
+    //     }
+    // }
 }

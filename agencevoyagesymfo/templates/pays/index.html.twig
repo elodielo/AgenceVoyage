@@ -3,14 +3,14 @@
 {% block title %}Pays index{% endblock %}
 
 {% block body %}
-    <h1 class="fond p-3">Pays index</h1>
+    <h1 class="p-3">Liste des pays</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -19,8 +19,8 @@
                 <td>{{ pay.id }}</td>
                 <td>{{ pay.nom }}</td>
                 <td>
-                    <a href="{{ path('app_pays_show', {'id': pay.id}) }}">show</a>
-                    <a href="{{ path('app_pays_edit', {'id': pay.id}) }}">edit</a>
+                    <a class="btn btn-outline-secondary m-1" href="{{ path('app_pays_show', {'id': pay.id}) }}">show</a>
+                    <a class="btn btn-outline-primary m-1" href="{{ path('app_pays_edit', {'id': pay.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -30,6 +30,7 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_pays_new') }}">Create new</a>
+    <div class="d-grid gap-2 d-md-flex justify-content-center">
+    <a class="btn btn-success btn-lg" href="{{ path('app_pays_new') }}">Ajouter un pays</a>
+    </div>
 {% endblock %}

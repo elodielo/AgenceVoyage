@@ -3,15 +3,15 @@
 {% block title %}Endroit index{% endblock %}
 
 {% block body %}
-    <h1 class="fond p-3">Endroit index</h1>
+    <h1 class=" p-3">Tous les endroits</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
-                <th>LienImage</th>
-                <th>actions</th>
+                <th>Lien de l'image</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -21,8 +21,8 @@
                 <td>{{ endroit.nom }}</td>
                 <td>{{ endroit.lienImage }}</td>
                 <td>
-                    <a href="{{ path('app_endroit_show', {'id': endroit.id}) }}">show</a>
-                    <a href="{{ path('app_endroit_edit', {'id': endroit.id}) }}">edit</a>
+                    <a class="btn btn-outline-secondary m-1" href="{{ path('app_endroit_show', {'id': endroit.id}) }}">show</a>
+                    <a class="btn btn-outline-primary m-1" href="{{ path('app_endroit_edit', {'id': endroit.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -32,6 +32,7 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_endroit_new') }}">Create new</a>
+    <div class="d-grid gap-2 d-md-flex justify-content-center">
+    <a class="btn btn-success btn-lg" href="{{ path('app_endroit_new') }}">Créer nouvel endroit</a>
+    </div>
 {% endblock %}

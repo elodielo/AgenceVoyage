@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -41,15 +42,20 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'label' => 'Confirmez votre mot de passe :'
             ])
-            ->add('agreeTerms', CheckboxType::class, [
-                'label' => 'Accepter les termes',
-                                'mapped' => false,
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'Merci d\'accepter les termes du contrat.',
-                    ]),
-                ],
-            ])
+            
+            
+
+
+            // ->add('agreeTerms', CheckboxType::class, [
+            //     'label' => 'Accepter les termes',
+            //                     'mapped' => false,
+            //     'constraints' => [
+            //         new IsTrue([
+            //             'message' => 'Merci d\'accepter les termes du contrat.',
+            //         ]),
+            //     ],
+            // ])
+
             ->add('Enregistrer', SubmitType::class, [
                 "attr" => ["class" => 'btn-primary']
             ])

@@ -15,6 +15,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 #[Route('/voyage', name: 'app_voyage_')]
 class VoyageController extends AbstractController
 {
+    #[IsGranted('ROLE_EDITEUR')]
     #[Route('s', name: 'index', methods: ['GET'])]
     public function index(VoyageRepository $voyageRepository): Response
     {   
@@ -25,7 +26,7 @@ class VoyageController extends AbstractController
     }
 
     
-    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_EDITEUR')]
     #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -46,6 +47,7 @@ class VoyageController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_EDITEUR')]
     #[Route('/{id}', name: 'show', methods: ['GET'])]
     public function show(Voyage $voyage): Response
     {
@@ -53,7 +55,6 @@ class VoyageController extends AbstractController
             'voyage' => $voyage,
         ]);
     }
-
     #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Voyage $voyage, EntityManagerInterface $entityManager): Response

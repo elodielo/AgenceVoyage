@@ -34,7 +34,6 @@ export default function FormulaireContact() {
         // redirect('/login')
         // navigate.push('/');
         setReussiteMessage('Le message a bien été envoyé')
-        console.log('youp');
       } else if (response.status === 422) {
         const errorData = await response.json();
         setErrorMessage(errorData.error);

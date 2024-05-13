@@ -3,7 +3,7 @@
 {% block title %}Voyage{% endblock %}
 
 {% block body %}
-    <h1 class="fond p-3">Voyage</h1>
+    <h1 class="p-3">Voyage</h1>
 
     <table class="table">
         <tbody>
@@ -16,35 +16,38 @@
                 <td>{{ voyage.nom }}</td>
             </tr>
             <tr>
-                <th>NombreNuits</th>
+                <th>Nombre de nuits</th>
                 <td>{{ voyage.nombreNuits }}</td>
             </tr>
             <tr>
-                <th>RepasCompris</th>
+                <th>Repas compris</th>
                 <td>{{ voyage.repasCompris ? 'Yes' : 'No' }}</td>
             </tr>
             <tr>
-                <th>PrixTotal</th>
+                <th>Prix total</th>
                 <td>{{ voyage.prixTotal }}</td>
             </tr>
             <tr>
-                <th>TransportADestinationInclus</th>
+                <th>Transport à destination inclus</th>
                 <td>{{ voyage.transportADestinationInclus ? 'Yes' : 'No' }}</td>
             </tr>
             <tr>
-                <th>DateDebut</th>
+                <th>Date de début</th>
                 <td>{{ voyage.dateDebut ? voyage.dateDebut|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>DateFin</th>
+                <th>Date de fin</th>
                 <td>{{ voyage.dateFin ? voyage.dateFin|date('Y-m-d') : '' }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_voyage_index') }}">back to list</a>
+    <div class="d-flex d-flex justify-content-around">
+    <a class="btn btn-outline-primary" href="{{ path('app_voyage_index') }}">Revenir à la liste des voyages</a>
 
-    <a href="{{ path('app_voyage_edit', {'id': voyage.id}) }}">edit</a>
+    <a class="btn btn-outline-primary" href="{{ path('app_voyage_edit', {'id': voyage.id}) }}">edit</a>
 
     {{ include('voyage/_delete_form.html.twig') }}
+    
+    </div>
 {% endblock %}

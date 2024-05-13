@@ -3,7 +3,7 @@
 {% block title %}Voyage index{% endblock %}
 
 {% block body %}
-    <h1 class="fond p-3">Voyage index</h1>
+    <h1 class="p-3">Voyage index</h1>
 
     <table class="table">
         <thead class="text-center">
@@ -40,9 +40,9 @@
                 <td>{{ voyage.endroit.lienImage }}</td>
 
 
-                <td>
-                    <a href="{{ path('app_voyage_show', {'id': voyage.id}) }}">show</a>
-                    <a href="{{ path('app_voyage_edit', {'id': voyage.id}) }}">edit</a>
+                <td class="d-flex">
+                    <a class="btn btn-outline-secondary m-1" href="{{ path('app_voyage_show', {'id': voyage.id}) }}">show</a>
+                    <a class="btn btn-outline-primary m-1" href="{{ path('app_voyage_edit', {'id': voyage.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -52,6 +52,7 @@
         {% endfor %}
         </tbody>
         </table>
-        <a href="{{ path('app_voyage_new') }}">Create new</a>
-
+        <div class="d-grid gap-2 d-md-flex justify-content-center">
+        <a class="btn btn-success btn-lg"  href="{{ path('app_voyage_new') }}">Create new</a>
+        </div>
 {% endblock %}
