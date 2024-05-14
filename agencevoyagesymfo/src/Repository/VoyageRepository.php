@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\User;
 use App\Entity\Voyage;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -60,6 +61,26 @@ class VoyageRepository extends ServiceEntityRepository
         // Et enfin on récupère le résultat :
         ->getResult();
     }
+
+    public function findVoyageParNom(string $nom): ?Voyage
+    {
+        return $this->createQueryBuilder('voyage')
+            ->where('voyage.nom = :nom')
+            ->setParameter('nom', $nom)
+            ->getQuery()
+            ->getOneOrNullResult();  // Utilisation de getOneOrNullResult pour un seul résultat
+    }
+    
+    public function findAllByUser(User $user): array
+    {
+        return $this->createQueryBuilder('voyage')
+            ->join('voyage.user', 'user')
+            ->where('user = :user')
+            ->setParameter('user', $user)
+            ->getQuery()
+            ->getResult();
+    }
+
 
     public function findAllwithAll(){
         return $this->createQueryBuilder("voyage")

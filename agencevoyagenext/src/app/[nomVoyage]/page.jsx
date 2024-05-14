@@ -9,7 +9,8 @@ import Plaire from "@/components/includes/Plaire";
 
 
 import './pageVoyage.css'
-import FormulaireContact from "@/components/FormulaireContact";
+// import FormulaireContact from "@/components/FormulaireContact";
+import FormulaireContactResa from "@/components/FormulaireContactResa";
 
 export default function Voyage(props) {
   const [loading, setLoading] = useState(true); // État de chargement des données.
@@ -52,8 +53,8 @@ export default function Voyage(props) {
         <button  className='btn btn-secondary'> contactez nous</button>
         </div>
         </div>
-        <div class="d-flex justify-content-around p-5">
-          <div> 
+        <div class="d-flex justify-content-between p-5">
+          <div class="w-100 p-3"> 
             <h5>Les nuits</h5>
             <p> en {data.modaliteNuit.nom}</p>
             <h5> Les repas </h5>
@@ -63,8 +64,8 @@ export default function Voyage(props) {
             <h5>Prix total</h5>
             <p>{data.prixTotal} euros </p>
           </div>
-          <div>
-            <FormulaireContact />
+          <div class="w-100 p-3">
+            <FormulaireContactResa data={data} />
           </div>
         </div>
       </div>)}

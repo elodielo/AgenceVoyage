@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ContactResaRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: ContactResaRepository::class)]
 class ContactResa
@@ -12,24 +13,31 @@ class ContactResa
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups('api_contactResa_new')]
     private ?int $id = null;
 
     #[ORM\Column(length: 100)]
+    #[Groups('api_contactResa_new')]
     private ?string $nom = null;
 
     #[ORM\Column(length: 100)]
+    #[Groups('api_contactResa_new')]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('api_contactResa_new')]
     private ?string $email = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups('api_contactResa_new')]
     private ?string $commentaire = null;
 
     #[ORM\ManyToOne(inversedBy: 'contactResa')]
+    #[Groups('api_contactResa_new')]
     private ?Voyage $voyage = null;
 
     #[ORM\ManyToOne(inversedBy: 'contactResa')]
+    #[Groups('api_contactResa_new')]
     private ?Statut $statut = null;
 
 

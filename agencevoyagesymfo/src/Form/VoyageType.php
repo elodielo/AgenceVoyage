@@ -25,9 +25,9 @@ class VoyageType extends AbstractType
         $builder
         ->add('nom', TextType::class)
         ->add('nombreNuits', IntegerType::class)
-        ->add('repasCompris', CheckboxType::class)
+        ->add('repasCompris')
         ->add('prixTotal', IntegerType::class)
-        ->add('transportADestinationInclus', CheckboxType::class)
+        ->add('transportADestinationInclus')
         ->add('dateDebut',  dateType::class, [
                 'widget' => 'single_text'
             ])

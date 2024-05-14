@@ -5,9 +5,8 @@ import './bandeauPhotos.css'
 import Image from 'next/image';
 
 export default function BandeauPhotos(props) {
-  console.log(props.data[1])
   let data = props.data;
-  console.log(data)
+
 
   return(
     <div className='p-2'>

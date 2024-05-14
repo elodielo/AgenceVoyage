@@ -3,12 +3,8 @@
 {% block title %}Voyage index{% endblock %}
 
 {% block body %}
-    <div class="d-flex justify-content-between">
-    <h1 class="p-3">Voyage index</h1>
-    <div>
-    <a href="{{ path('app_voyage_user_voyages') }}" class="btn btn-light"> Mes voyages  </a>
-    </div>
-    </div>
+    <h1 class="p-3">Mes voyages</h1>
+
     <table class="table">
         <thead class="text-center">
             <tr>
@@ -45,12 +41,9 @@
 
 
                 <td class="d-flex">
-                    
                     <a class="btn btn-outline-secondary m-1" href="{{ path('app_voyage_show', {'id': voyage.id}) }}">show</a>
                     <a class="btn btn-outline-primary m-1" href="{{ path('app_voyage_edit', {'id': voyage.id}) }}">edit</a>
-            
-
-                    </td>
+                </td>
             </tr>
         {% else %}
             <tr>

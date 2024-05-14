@@ -18,7 +18,7 @@ class Voyage
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups('api_voyage_index')]
+    #[Groups(['api_voyage_index','api_contactResa_new' ])]
     private ?string $nom = null;
 
     #[ORM\Column(nullable: true)]

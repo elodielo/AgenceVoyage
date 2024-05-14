@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Voyage;
+use App\Entity\User;
 use App\Form\VoyageType;
 use App\Repository\VoyageRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -25,6 +26,17 @@ class VoyageController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_EDITEUR')]
+    #[Route('/user/voyages', name: 'user_voyages', methods: ['GET'])]
+    public function UserVoyages(VoyageRepository $voyageRepository): Response
+    {   
+            $user = $this->getUser();
+            $voyages = $voyageRepository->findAllByUser($user);
+            return $this->render('voyage/user_voyages.html.twig', [
+            'voyages' => $voyages,
+        ]);
+    }
+    
     
     #[IsGranted('ROLE_EDITEUR')]
     #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
@@ -35,6 +47,7 @@ class VoyageController extends AbstractController
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) {
+            $voyage->setUser($this->getUser());
             $entityManager->persist($voyage);
             $entityManager->flush();
 
