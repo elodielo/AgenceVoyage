@@ -45,24 +45,25 @@ export default function Voyage(props) {
         src={"http://localhost:8000/images/" + data.endroit.lienImage}
       />
         <div id="infos">
-          <p>{data.endroit.nom}</p>
+          <p class="fs-2">{data.endroit.nom}</p>
           <p> {data.endroit.pays.nom}</p>
-          <p>Nombre de nuits : {data.nombreNuits}</p>
+          <p> {data.nombreNuits} nuits </p>
         </div>
         <div>
         <button  className='btn btn-secondary'> contactez nous</button>
         </div>
         </div>
         <div class="d-flex justify-content-between p-5">
-          <div class="w-100 p-3"> 
-            <h5>Les nuits</h5>
+          <div class="w-100 p-3 border border-info"> 
+            <h5 className="p-2">Les nuits</h5>
             <p> en {data.modaliteNuit.nom}</p>
-            <h5> Les repas </h5>
-            <p>{data.repasCompris}</p>
-            <h5> Transport à destination</h5>
-            <p>{data.transportADestinationInclus}</p>
-            <h5>Prix total</h5>
-            <p>{data.prixTotal} euros </p>
+            <h5 className="p-2"> Les repas sont compris </h5>
+            <p>{data.repasCompris ? 'oui' : 'non'}</p>
+            <h5 className="p-2"> Transport à destination inclus</h5>
+            
+            <p>{data.transportADestinationInclus ? 'oui' : 'non'}</p>
+            <h5 className="p-2">Prix total</h5>
+            <p >{data.prixTotal} euros </p>
           </div>
           <div class="w-100 p-3">
             <FormulaireContactResa data={data} />

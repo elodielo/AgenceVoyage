@@ -4,7 +4,7 @@ import Link from 'next/link';
 import './bandeauPhotos.css'
 import Image from 'next/image';
 
-export default function BandeauPhotos(props) {
+export default function BandeauPhotos3(props) {
   let data = props.data;
 
 
@@ -14,7 +14,7 @@ export default function BandeauPhotos(props) {
   <div  >
   <ul className='d-flex flex-wrap flex-row justify-content-evenly'>
     {props.data    .sort(() => 0.5 - Math.random())
-          .slice(0, 12).map((voyage, index) => (
+          .slice(0, 5).map((voyage, index) => (
      <Link className='link-unstyled list-unstyled text-center'  key={index} href={"/" + voyage.nom}>
       <li>
         <p> {voyage.nom}</p>

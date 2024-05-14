@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import BandeauPhotos from "./BandeauPhotos"
+import BandeauPhotos3 from "./BandeauPhotos3";
 
 export default function Plaire(){
     const [loading, setLoading] = useState(true); // État de chargement des données.
@@ -28,9 +29,9 @@ export default function Plaire(){
     return(
         <>
         {!loading && !error && data && (
-          <div className="body">
+          <div className="fondB body">
             <h2> Succeptible de vous plaire</h2>
-            <BandeauPhotos data={data} />
+            <BandeauPhotos3 data={data} />
 
           </div>
         )}
