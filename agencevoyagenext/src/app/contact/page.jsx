@@ -9,8 +9,8 @@ export default function Contact()
     return(
         <div>
         <Navbar />
-        <div className="text-center">
-        <h3 className="m-3"> Nous sommes ici pour répondre à toutes vos questions</h3>
+        <div className="body text-center">
+        <h3 className="p-3"> Nous sommes ici pour répondre à toutes vos questions</h3>
         </div>
         <FormulaireContact />
         <Footer />

@@ -5,3 +5,22 @@
 .fond {
     background-color: var(--fondCouleur);
 }
+
+.responsiveNav{
+    display: none;
+}
+
+@media screen and (max-width: 864px) {
+    .responsiveNav{
+        display: block;
+    }
+    .logo{
+        width: 4em;
+        height: 4em;
+        padding:5px;
+    }
+
+    .nav{
+        display: none;
+    }
+  }

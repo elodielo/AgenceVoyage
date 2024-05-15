@@ -1,0 +1,9 @@
+.largeur {
+    width: 50%;
+}
+
+@media screen and (max-width: 864px) {
+    .largeur{
+        width: 100%;
+    }
+  }

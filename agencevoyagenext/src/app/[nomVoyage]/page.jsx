@@ -41,7 +41,7 @@ export default function Voyage(props) {
         
       <div className="fondB p-5">
         <div class="d-flex justify-content-around">
-        <Image width={200} height={200}
+        <Image width={250} height={250}
         src={"http://localhost:8000/images/" + data.endroit.lienImage}
       />
         <div id="infos">
@@ -49,11 +49,11 @@ export default function Voyage(props) {
           <p> {data.endroit.pays.nom}</p>
           <p> {data.nombreNuits} nuits </p>
         </div>
-        <div>
+        {/* <div>
         <button  className='btn btn-secondary'> contactez nous</button>
+        </div> */}
         </div>
-        </div>
-        <div class="d-flex justify-content-between p-5">
+        <div class="espace d-flex justify-content-between p-5">
           <div class="w-100 p-3 border border-info"> 
             <h5 className="p-2">Les nuits</h5>
             <p> en {data.modaliteNuit.nom}</p>
@@ -65,7 +65,7 @@ export default function Voyage(props) {
             <h5 className="p-2">Prix total</h5>
             <p >{data.prixTotal} euros </p>
           </div>
-          <div class="w-100 p-3">
+          <div class="w-100">
             <FormulaireContactResa data={data} />
           </div>
         </div>

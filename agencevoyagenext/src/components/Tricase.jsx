@@ -4,14 +4,13 @@ import { Dropdown } from "bootstrap";
 import Voyages from "./Voyages";
 
 export default function Tricase(props) {
-  console.log(props.data)
   const paysDejaNotes = [];
   const transportDejaNotés = [];
   const DureeDejaNotee = [];
 
   return (
     <div>
-      <div className="d-flex justify-content-between p-5">
+      <div className="body d-flex justify-content-between p-5">
         <p>{props.data2.length} destinations</p>
         <div id="casesTri" className="d-flex ">
           <div class="dropdown">

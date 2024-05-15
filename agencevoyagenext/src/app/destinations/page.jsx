@@ -18,7 +18,6 @@ export default function Destinations(props)
 
     useEffect(() => {
         if (data) {
-            console.log(filter);
             const wip = data.filter((voyage) => voyage.endroit.pays.nom === filter);
             setFilteredData(wip);
         }

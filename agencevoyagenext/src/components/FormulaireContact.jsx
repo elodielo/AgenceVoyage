@@ -3,6 +3,7 @@
 
 import React, { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
+import './FormulaireContact.css'
 
 
 export default function FormulaireContact() {
@@ -52,9 +53,9 @@ export default function FormulaireContact() {
   };
 
   return (
-    <div className="d-flex justify-content-center">
+    <div className="body d-flex justify-content-center">
       <div className="m-5 w-75 p-3 fond d-flex justify-content-center">
-        <form onSubmit={handleSubmit} className="w-50 p-3" method="POST">
+        <form onSubmit={handleSubmit} className="largeur p-3" method="POST">
           {/* Champs de formulaire */}
           <div className="mb-3">
             <label htmlFor="nom" className="form-label">Nom</label>
