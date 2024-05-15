@@ -8,6 +8,8 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 #[ORM\Entity(repositoryClass: VoyageRepository::class)]
 class Voyage
@@ -19,6 +21,7 @@ class Voyage
 
     #[ORM\Column(length: 255)]
     #[Groups(['api_voyage_index','api_contactResa_new' ])]
+    #[Assert\NotBlank(message : "Le nom ne peut pas être vide")]
     private ?string $nom = null;
 
     #[ORM\Column(nullable: true)]

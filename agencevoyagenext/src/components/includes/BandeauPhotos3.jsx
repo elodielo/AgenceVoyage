@@ -15,10 +15,10 @@ export default function BandeauPhotos3(props) {
   <ul className='d-flex flex-wrap flex-row justify-content-evenly'>
     {props.data    .sort(() => 0.5 - Math.random())
           .slice(0, 5).map((voyage, index) => (
-     <Link className='link-unstyled list-unstyled text-center'  key={index} href={"/" + voyage.nom}>
-      <li>
+     <Link className=' link-unstyled list-unstyled text-center'  key={index} href={"/" + voyage.nom}>
+      <li className='p-2 m-2 border border-3 rounded'>
         <p> {voyage.nom}</p>
-        <p> {voyage.endroit.nom}</p>
+        <p class="fst-italic"> {voyage.endroit.nom}</p>
         <Image width={200} height={200}
         src={"http://localhost:8000/images/" + voyage.endroit.lienImage}
       />

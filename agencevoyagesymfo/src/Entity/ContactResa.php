@@ -6,6 +6,8 @@ use App\Repository\ContactResaRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 #[ORM\Entity(repositoryClass: ContactResaRepository::class)]
 class ContactResa
@@ -18,14 +20,22 @@ class ContactResa
 
     #[ORM\Column(length: 100)]
     #[Groups('api_contactResa_new')]
+    #[Assert\NotBlank(message : "Le nom ne peut pas être vide")]
+
     private ?string $nom = null;
 
     #[ORM\Column(length: 100)]
     #[Groups('api_contactResa_new')]
+    #[Assert\NotBlank(message : "Le prénom ne peut pas être vide")]
+
     private ?string $prenom = null;
 
     #[ORM\Column(length: 255)]
     #[Groups('api_contactResa_new')]
+    #[Assert\NotBlank(message : "L'email ne peut pas être vide")]
+    #[Assert\Email(
+        message: 'L\email n\'est pas valide',
+    )]
     private ?string $email = null;
 
     #[ORM\Column(type: Types::TEXT)]

@@ -32,7 +32,6 @@ export default function Voyage(props) {
     }
   }, []); // Le tableau vide indique que cet effet ne s'exécute qu'au montage.
 
-  console.log(data);
 
   return (
     <div>
