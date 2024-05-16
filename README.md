@@ -1,6 +1,7 @@
 ## Agence de voyage
 
-Le but est de créer un site d'agence de voyages. Celui-ci est composé en deux parties : une partie front réalisée à l'aide de react/next et visible par les utilisateurs et une partie back realisée à l'aide de symfony ayant tout de même une interface pour les administrateurs et éditeurs afin de pouvoir créer et gérer des voyages. 
+Le but est de créer un site d'agence de voyages. Celui-ci est composé en deux parties : une partie front réalisée à l'aide de react/next et visible par les utilisateurs et une partie back realisée à l'aide de symfony ayant tout de même une interface pour les administrateurs et éditeurs afin de pouvoir créer et gérer des voyages 
+Le site est responsive.
 
 ## Installation
 
@@ -28,5 +29,9 @@ Dans la partie back, il est nécessaire d'être admin pour créer de nouveaux ut
 
 ## Points d'amélioration
 
-- Enlever les boutons supprimer et éditer lorsque le voyage ne correspond pas au bon éditeur. 
+- Enlever les boutons "supprimer" et "éditer" lorsque le voyage ne correspond pas au bon éditeur. 
+- Travailler sur les statuts des messages et les attribuer aux bons éditeurs.
+- En production, chemin des images du front. 
+- Que les utilisateurs et éditeurs puissent modifier leurs informations.
+- Mettre le back en responsive
 
