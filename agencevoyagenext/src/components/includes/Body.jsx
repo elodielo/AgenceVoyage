@@ -29,7 +29,6 @@ export default function Body() {
     }
   }, []); // Le tableau vide indique que cet effet ne s'exécute qu'au montage.
 
-  
   return (
     <>
       {!loading && !error && data && (

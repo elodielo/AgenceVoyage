@@ -4,7 +4,7 @@ export default function Voyages(props) {
   return (
     <div>
       <p>tri</p>
-      
+
       <div class="form-floating">
         <textarea
           class="form-control"
@@ -14,7 +14,6 @@ export default function Voyages(props) {
         ></textarea>
         <label for="floatingTextarea2">Comments</label>
       </div>
-
     </div>
   );
 }

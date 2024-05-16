@@ -1,7 +1,7 @@
 "use client"
 
 import './navbar.css'
-import { Dropdown } from 'bootstrap'
+// import { Dropdown } from 'bootstrap'
 
 export default function Navbar(){
     return(
