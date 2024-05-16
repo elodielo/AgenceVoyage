@@ -19,8 +19,8 @@ export default function Voyage(props) {
   useEffect(() => {
     // Déclenchement de la récupération des données de personnages au montage du composant.
     try {
-      // fetch("http://127.0.0.1:8000/api/voyage/" + props.params.nomVoyage)
-      fetch("https://simplondevgrenoble.nohost.me/elodiel/agenceVoyage/public/api/voyage/" + props.params.nomVoyage)
+      fetch("http://127.0.0.1:8000/api/voyage/" + props.params.nomVoyage)
+      // fetch("https://simplondevgrenoble.nohost.me/elodiel/agenceVoyage/public/api/voyage/" + props.params.nomVoyage)
         .then((response) => response.json()) // Transformation de la réponse en JSON.
         .then((data) => {
           setLoading(false); // Arrêt de l'indicateur de chargement après la réception des données.
