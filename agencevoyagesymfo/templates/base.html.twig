@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="fond p-3 d-flex justify-content-between">
-            <img class="imageLogo" src="../images/logoRando.png" alt="logo randonnee">
+           <a href="{{ path('app_voyage_index') }}"> <img class="imageLogo" src="../images/logoRando.png" alt="logo randonnee"></a>
             <h1>Le renard aux pieds d'Or</h1>
             <div>
                    <button class="btn btn-outline-success"> <a class="text-dark" href='/login'>Connexion</a></button>
@@ -25,4 +25,7 @@
              
 {% block body %}{% endblock %}
     </body>
+    <footer>
+        <div class="fond p-2"> All right </div>
+     </footer>
 </html>

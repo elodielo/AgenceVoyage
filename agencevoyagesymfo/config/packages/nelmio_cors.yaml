@@ -36,4 +36,4 @@ nelmio_cors:
         max_age: 3600
     paths:
         '^/api/':
-            allow_origin: ['http://localhost:3000']
+            allow_origin: ['http://localhost:3000', 'https://repoagencefront-22vams8fx-elodielos-projects.vercel.app/']

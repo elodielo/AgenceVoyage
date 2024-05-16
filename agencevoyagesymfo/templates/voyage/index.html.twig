@@ -7,6 +7,7 @@
     <h1 class="p-3">Voyage index</h1>
     <div>
     <a href="{{ path('app_voyage_user_voyages') }}" class="btn btn-light"> Mes voyages  </a>
+    <a class="btn btn-outline-light"  href="{{ path('app_user_index') }}">Tous les utilisateurs</a>
     </div>
     </div>
     <table class="table">
@@ -62,4 +63,8 @@
         <div class="d-grid gap-2 d-md-flex justify-content-center">
         <a class="btn btn-success btn-lg"  href="{{ path('app_voyage_new') }}">Create new</a>
         </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-around">
+            <a class="btn btn-outline-success"  href="{{ path('app_pays_index') }}">Pays disponibles</a>
+            <a class="btn btn-outline-success"  href="{{ path('app_endroit_index') }}">Endroits disponibles</a>
+            </div>
 {% endblock %}
