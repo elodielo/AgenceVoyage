@@ -42,7 +42,8 @@ export default function Destinations(props)
     useEffect(() => {
       // Déclenchement de la récupération des données de personnages au montage du composant.
       try {
-        fetch("http://127.0.0.1:8000/api/voyage/tous" )
+        // fetch("http://127.0.0.1:8000/api/voyage/tous" )
+        fetch("https://simplondevgrenoble.nohost.me/elodiel/agenceVoyage/public/api/voyage/tous")
           .then((response) => response.json()) // Transformation de la réponse en JSON.
           .then((data) => {
             setLoading(false); // Arrêt de l'indicateur de chargement après la réception des données.
