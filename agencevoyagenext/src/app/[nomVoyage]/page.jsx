@@ -8,29 +8,26 @@ import Footer from "@/components/includes/footer";
 import Plaire from "@/components/includes/Plaire";
 
 import "./pageVoyage.css";
-// import FormulaireContact from "@/components/FormulaireContact";
 import FormulaireContactResa from "@/components/FormulaireContactResa";
 
 export default function Voyage(props) {
-  const [loading, setLoading] = useState(true); // État de chargement des données.
-  const [error, setError] = useState(false); // État pour capturer une éventuelle erreur lors du fetch.
-  const [data, setData] = useState(null); // Stockage des données reçues du fetch.
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    // Déclenchement de la récupération des données de personnages au montage du composant.
     try {
       fetch("http://127.0.0.1:8000/api/voyage/" + props.params.nomVoyage)
-      // fetch("https://simplondevgrenoble.nohost.me/elodiel/agenceVoyage/public/api/voyage/" + props.params.nomVoyage)
-        .then((response) => response.json()) // Transformation de la réponse en JSON.
+        .then((response) => response.json())
         .then((data) => {
-          setLoading(false); // Arrêt de l'indicateur de chargement après la réception des données.
-          setData(data); // Enregistrement des données reçues dans l'état 'data'.
+          setLoading(false);
+          setData(data);
         });
     } catch (error) {
-      setError(true); // Enregistrement de l'erreur dans l'état 'error'.
-      setLoading(false); // Arrêt de l'indicateur de chargement en cas d'erreur.
+      setError(true);
+      setLoading(false);
     }
-  }, []); // Le tableau vide indique que cet effet ne s'exécute qu'au montage.
+  }, []);
 
   return (
     <div>

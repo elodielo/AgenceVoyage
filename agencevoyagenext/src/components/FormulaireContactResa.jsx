@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-// import { useNavigate } from 'react-router-dom';
 
 export default function FormulaireContactResa(props) {
   const [errorMessage, setErrorMessage] = useState(null);
@@ -18,7 +17,6 @@ export default function FormulaireContactResa(props) {
     event.preventDefault();
     try {
       const response = await fetch(
-        // "https://simplondevgrenoble.nohost.me/elodiel/agenceVoyage/public/api/contactResa/new/" + props.data.nom,
         "http://127.0.0.1:8000/api/contactResa/new/" + props.data.nom,
         {
           method: "POST",
@@ -31,8 +29,7 @@ export default function FormulaireContactResa(props) {
 
       if (response.ok) {
         const data = await response.json();
-        // redirect('/login')
-        // navigate.push('/');
+
         setReussiteMessage("Le message a bien été envoyé");
       } else if (response.status === 422) {
         const errorData = await response.json();

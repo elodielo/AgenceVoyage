@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
-import BandeauPhotos from "./BandeauPhotos"
+import BandeauPhotos from "./BandeauPhotos";
 import BandeauPhotos3 from "./BandeauPhotos3";
 
-export default function Plaire(){
-    const [loading, setLoading] = useState(true); // État de chargement des données.
+export default function Plaire() {
+  const [loading, setLoading] = useState(true); // État de chargement des données.
   const [error, setError] = useState(false); // État pour capturer une éventuelle erreur lors du fetch.
   const [data, setData] = useState(null); // Stockage des données reçues du fetch.
 
@@ -23,18 +23,14 @@ export default function Plaire(){
     }
   }, []); // Le tableau vide indique que cet effet ne s'exécute qu'au montage.
 
-    
-
-
-    return(
-        <>
-        {!loading && !error && data && (
-          <div className="fondB body">
-            <h2> Succeptible de vous plaire</h2>
-            <BandeauPhotos3 data={data} />
-
-          </div>
-        )}
-      </>
-    )
+  return (
+    <>
+      {!loading && !error && data && (
+        <div className="fondB body">
+          <h2> Succeptible de vous plaire</h2>
+          <BandeauPhotos3 data={data} />
+        </div>
+      )}
+    </>
+  );
 }

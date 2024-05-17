@@ -9,7 +9,6 @@ export default function BandeauPhotos(props) {
 
   return (
     <div className="body p-2">
-      {/* <h2 className='p-3'>Destinations proposées</h2> */}
       <div>
         <ul className="d-flex flex-wrap flex-row justify-content-evenly">
           {props.data
@@ -31,7 +30,6 @@ export default function BandeauPhotos(props) {
                       "http://localhost:8000/images/" + voyage.endroit.lienImage
                     }
                   />
-                  {/* <p> image:"http://127.0.0.1:8000/images/" +{voyage.endroit.lienImage} </p> */}
                 </li>
               </Link>
             ))}
@@ -43,16 +41,6 @@ export default function BandeauPhotos(props) {
         </Link>
       </div>
     </div>
-    // console.log(props.data)
   );
 }
 
-/* {nombreDePhotos.map((_, index) => ( */
-// return (
-// <div className='d-flex justify-content-around'>
-//   {props.data.map((voyage, index) =>(
-//    <Link href= {'/' + voyage.name}>
-//     <div key={index} className="boitePhoto"></div>
-//     </Link>
-// ))}
-// </div>

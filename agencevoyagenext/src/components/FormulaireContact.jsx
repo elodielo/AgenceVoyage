@@ -19,7 +19,6 @@ export default function FormulaireContact() {
     event.preventDefault();
 
     try {
-      // const response = await fetch("https://simplondevgrenoble.nohost.me/elodiel/agenceVoyage/public/api/contact/new", {
       const response = await fetch("http://127.0.0.1:8000/api/contact/new", {
         method: "POST",
         headers: {
@@ -30,8 +29,7 @@ export default function FormulaireContact() {
 
       if (response.ok) {
         const data = await response.json();
-        // redirect('/login')
-        // navigate.push('/');
+
         setReussiteMessage("Le message a bien été envoyé");
       } else if (response.status === 422) {
         const errorData = await response.json();
@@ -54,7 +52,6 @@ export default function FormulaireContact() {
     <div className="body d-flex justify-content-center">
       <div className="m-5 w-75 p-3 fond d-flex justify-content-center">
         <form onSubmit={handleSubmit} className="largeur p-3" method="POST">
-          {/* Champs de formulaire */}
           <div className="mb-3">
             <label htmlFor="nom" className="form-label">
               Nom

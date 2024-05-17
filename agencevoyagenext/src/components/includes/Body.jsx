@@ -4,18 +4,13 @@ import "./body.css";
 import BandeauPhotos from "./BandeauPhotos";
 import BandeauPhotos2 from "./BandeauPhotos2";
 import { useEffect, useState } from "react";
-// import fetch from 'cross-fetch';
 
 export default function Body() {
-  // fetch('http://127.0.0.1:8000/api/voyage/show').then((response) => {
-  //   console.log(response.json())
-  // })
   const [loading, setLoading] = useState(true); // État de chargement des données.
   const [error, setError] = useState(false); // État pour capturer une éventuelle erreur lors du fetch.
   const [data, setData] = useState(null); // Stockage des données reçues du fetch.
 
   useEffect(() => {
-    // Déclenchement de la récupération des données de personnages au montage du composant.
     try {
       fetch("http://127.0.0.1:8000/api/voyage/show")
         .then((response) => response.json()) // Transformation de la réponse en JSON.
