@@ -5,12 +5,19 @@ Le site est responsive.
 
 ## Installation
 
+
 Dans le fichier agencevoyagessymfo, créer un fichier .env.local en modifiant les données du .env pour la connexion avec la base de données. 
 Et exécuter symfony doctrine d:m:m .
 Si problème de CORS, modifier le fichier nelmio.cors dans le fichier symfony.
 
 En local ouvrir symfony server:start sur la console symfony et npm run dev sur le terminal react. En local, le site front sera accessible depuis le localhost:3000 et la partie back depuis le port http://127.0.0.1:8000. Si besoin installer bootstrap.
 
+## Logiciels nécessaires :
+ - PHP, 
+ - Node JS, 
+ -Symfony
+ https://symfony.com/download
+ - Wamp 
 
 ## Fonctionnalité: 
 Dans la partie back, il est nécessaire d'être admin pour créer de nouveaux utilisateurs. Pour tester :
@@ -21,7 +28,7 @@ Dans la partie back, il est nécessaire d'être admin pour créer de nouveaux ut
 
 ## Site visible en ligne : 
  - Front : le site est visible à cette adresse: 
- https://repoagencefront-22vams8fx-elodielos-projects.vercel.app/
+ https://repoagencefront.vercel.app/
 
  -Back : le site est visible à cette adresse:
  https://simplondevgrenoble.nohost.me/elodiel/agenceVoyage/public/
